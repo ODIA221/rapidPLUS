@@ -1,0 +1,20 @@
+/* Header */
+header {
+    background-color: #D4A24C;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header img {
+    width: 80px;
+}
+header nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin: 0 15px;
+}
+header nav a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,70 @@
+/* Centrage de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Conteneur principal */
+.container {
+    background-color: #ffffff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Titre principal */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Champs de formulaire */
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Bouton de soumission */
+button {
+    background-color: #D4A24C;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Messages d'information */
+.success {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.error {
+    color: #dc3545;
+    font-weight: bold;
+}

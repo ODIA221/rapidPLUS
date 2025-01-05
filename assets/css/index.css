@@ -1,0 +1,68 @@
+/* Global styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: #D4A24C;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header img {
+    width: 80px;
+}
+header nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin: 0 15px;
+}
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Banner */
+.banner {
+    background-image: url('/www/app_transport/assets/img/banner.jpg');
+    background: url('/www/app_transport/assets/img/banner.jpg') center/cover no-repeat;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.banner h1 {
+    color: white;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Content */
+.content {
+    text-align: center;
+    padding: 20px;
+    background-color: #121212;
+    color: white;
+    flex: 1;
+}
+.content img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #ccc;
+    position: relative;
+}
