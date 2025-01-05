@@ -12,7 +12,7 @@ class VehicleController {
             $licensePlate = htmlspecialchars($_POST['licensePlate'] ?? '', ENT_QUOTES, 'UTF-8');
             $driverName = htmlspecialchars($_POST['driverName'] ?? '', ENT_QUOTES, 'UTF-8');
             $driverPhone = htmlspecialchars($_POST['driverPhone'] ?? '', ENT_QUOTES, 'UTF-8');
-            $isAvailable = $_POST['isAvailable'] ?? 0; // Valeur par défaut : 0 (Non disponible)
+            $isAvailable = $_POST['isAvailable'] ?? 1; 
             $contactInfo = htmlspecialchars($_POST['contactInfo'] ?? '', ENT_QUOTES, 'UTF-8');
 
             // Validation des données
@@ -37,12 +37,18 @@ class VehicleController {
 
     // Validation du formulaire
     private function validateForm($licensePlate, $driverName, $driverPhone, $isAvailable, $contactInfo) {
+        // Vérifier si les champs essentiels sont vides
         if (empty($licensePlate) || empty($driverName) || empty($driverPhone) || empty($contactInfo)) {
             return false;
         }
 
         // Valider le format du numéro de téléphone (optionnel)
         if (!preg_match('/^\+?[0-9]{10,15}$/', $driverPhone)) {
+            return false;
+        }
+
+        // Valider la valeur de isAvailable (doit être 0 ou 1)
+        if ($isAvailable !== '0' && $isAvailable !== '1') {
             return false;
         }
 
