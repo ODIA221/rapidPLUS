@@ -1,30 +1,48 @@
 <?php
 require_once __DIR__ . '/../controllers/ContactController.php';
+// Base URL dynamique
+$baseURL = "http://" . $_SERVER['HTTP_HOST'] . "/www/app_transport";
 
 // Créez une instance du contrôleur
 $controller = new ContactController();
 
-//  récupérez le résultat (message de succès ou d'erreur)
+// Initialisez $result pour éviter les erreurs et pour afficher le résultat
 $result = $controller->handleSubmit();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php echo $baseURL; ?>/assets/css/contact.css">
     <title>Service Client</title>
+    <script>
+        // Fonction pour rediriger après 3 secondes
+        function redirectToIndex() {
+            setTimeout(function() {
+                window.location.href = '/www/app_transport/index.php';
+            }, 3000); // Attendre 3 secondes
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <h1>Contactez le Service Client</h1>
 
         <!-- Affichez le message de résultat s'il y en a un -->
-        <?php echo $result; ?>
+        <?php if (!empty($result)): ?>
+            <div class="result-message">
+                <?php echo $result; ?>
+            </div>
+            <script>
+                // Redirige après 3 secondes si le message de succès est affiché
+                redirectToIndex();
+            </script>
+        <?php endif; ?>
 
         <div class="contact-info">
-            <p>Email : <a href="mailto:rapid_plus@gmail.com">support@votresite.com</a></p>
+            <p>Email : <a href="mailto:support@votresite.com">support@votresite.com</a></p>
             <p>Téléphone : <a href="tel:+33123456789">+33 1 23 45 67 89</a></p>
             <div class="social-icons">
                 <a href="#" title="Facebook">F</a>

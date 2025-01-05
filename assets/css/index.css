@@ -30,8 +30,6 @@ header nav a:hover {
 
 /* Banner */
 .banner {
-    background-image: url('/www/app_transport/assets/img/banner.jpg');
-    background: url('/www/app_transport/assets/img/banner.jpg') center/cover no-repeat;
     height: 300px;
     display: flex;
     align-items: center;
@@ -47,7 +45,7 @@ header nav a:hover {
 .content {
     text-align: center;
     padding: 20px;
-    background-color: #121212;
+    background-color: #c2b5b5;
     color: white;
     flex: 1;
 }

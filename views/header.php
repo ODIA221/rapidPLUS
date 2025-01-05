@@ -9,8 +9,8 @@ $baseURL = "http://" . $_SERVER['HTTP_HOST'] . "/www/app_transport";
     </div>
     <nav class="navigation">
         <a href="<?php echo $baseURL; ?>/index.php">ACCUEIL</a>
-        <a href="<?php echo $baseURL; ?>/views/contact.php">SERVICE CLIENT</a>
-        <a href="<?php echo $baseURL; ?>/views/vehicule_list.php">Liste Véhicule</a>
-        <a href="<?php echo $baseURL; ?>/views/reservation.php">RÉSERVATION</a>
+        <a href="<?php echo $baseURL; ?>/views/contact.php">Contactez-nous</a>
+        <a href="<?php echo $baseURL; ?>/views/vehicule_list.php">RÉSERVATION</a>
+        <a href="<?php echo $baseURL; ?>/views/vehicule.php">ajouter vehicule</a>
     </nav>
 </header>

@@ -1,105 +1,116 @@
+/* Contact CSS */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #f4f4f4;
 }
 
 .container {
     max-width: 800px;
     margin: 50px auto;
+    background-color: white;
     padding: 20px;
-    background: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    color: #D4A24C;
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
     margin-bottom: 20px;
-    font-size: 28px; 
 }
 
 .contact-info {
-    margin: 20px 0;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .contact-info p {
-    margin: 10px 0;
+    font-size: 1rem;
+    color: #555;
 }
 
 .contact-info a {
     color: #D4A24C;
     text-decoration: none;
-    font-weight: bold; 
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
 }
 
 .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 20px 0;
+    margin-top: 20px;
 }
 
 .social-icons a {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #D4A24C;
-    color: #fff;
-    line-height: 40px;
-    text-align: center;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: #333;
 }
 
 .social-icons a:hover {
-    background-color: #b57b29;
+    color: #D4A24C;
 }
 
 form {
-    margin-top: 30px;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
 }
 
 form label {
-    display: block;
-    margin: 10px 0 5px;
-    font-weight: bold;
-    font-size: 16px; 
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #333;
 }
 
-form input, form textarea, form button {
-    width: 100%;
-    padding: 12px;
+form input, form textarea {
+    padding: 10px;
+    font-size: 1rem;
     margin-bottom: 15px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: border-color 0.3s ease; 
+    border-radius: 4px;
+    outline: none;
 }
 
 form input:focus, form textarea:focus {
-    border-color: #D4A24C; 
-    outline: none; 
+    border-color: #D4A24C;
 }
 
 form button {
+    padding: 10px;
+    font-size: 1rem;
     background-color: #D4A24C;
-    color: #fff;
+    color: white;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
 form button:hover {
-    background-color: #b57b29; 
+    background-color: #D4A24C;
 }
 
 form button:active {
-    background-color: #8e5f1d; 
+    background-color: #eb9c13;
 }
+
+/* Style pour les messages de résultat */
+.result-message {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #28a745; /* Vert pour succès */
+}
+
+.error-message {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #dc3545; /* Rouge pour erreur */
+}
+

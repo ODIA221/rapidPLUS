@@ -1,0 +1,113 @@
+/* Reset des marges et des bordures par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps du site */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Conteneur principal du formulaire */
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre */
+h1 {
+    font-size: 24px;
+    color: black;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Messages de succès/erreur */
+.result-message {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.success {
+    color: #4CAF50;
+}
+
+.error {
+    color: #ee2c66;
+}
+
+/* Style des champs de formulaire */
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+}
+
+input[type="tel"], input[type="text"], select {
+    font-size: 14px;
+}
+
+textarea {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    resize: vertical;
+}
+
+/* Bouton de soumission */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #D4A24C;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #eb9a0f;
+}
+
+/* Champ de sélection (pour 'Disponible') */
+select {
+    appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"%3E%3Cpath fill="none" stroke="%23333" stroke-width="1.5" d="M1 1l4 4 4-4"%3E%3C/path%3E%3C/svg%3E');
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    padding-right: 30px;
+}
+
+/* Champs obligatoires */
+input:required, select:required, textarea:required {
+    border-color: #D4A24C;
+}
+
+/* Ajouter un espace entre les éléments du formulaire */
+form {
+    margin-top: 20px;
+}
