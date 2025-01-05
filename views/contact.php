@@ -1,6 +1,11 @@
 <?php
-// Base URL dynamique
-$baseURL = "http://" . $_SERVER['HTTP_HOST'] . "/www/app_transport";
+require_once __DIR__ . '/../controllers/ContactController.php';
+
+// Créez une instance du contrôleur
+$controller = new ContactController();
+
+//  récupérez le résultat (message de succès ou d'erreur)
+$result = $controller->handleSubmit();
 ?>
 
 <!DOCTYPE html>
@@ -15,8 +20,11 @@ $baseURL = "http://" . $_SERVER['HTTP_HOST'] . "/www/app_transport";
     <div class="container">
         <h1>Contactez le Service Client</h1>
 
+        <!-- Affichez le message de résultat s'il y en a un -->
+        <?php echo $result; ?>
+
         <div class="contact-info">
-            <p>Email : <a href="mailto:support@votresite.com">support@votresite.com</a></p>
+            <p>Email : <a href="mailto:rapid_plus@gmail.com">support@votresite.com</a></p>
             <p>Téléphone : <a href="tel:+33123456789">+33 1 23 45 67 89</a></p>
             <div class="social-icons">
                 <a href="#" title="Facebook">F</a>
@@ -25,7 +33,7 @@ $baseURL = "http://" . $_SERVER['HTTP_HOST'] . "/www/app_transport";
             </div>
         </div>
 
-        <form action="/submit-contact" method="POST">
+        <form action="" method="POST">
             <label for="name">Nom :</label>
             <input type="text" id="name" name="name" placeholder="Votre nom" required>
 

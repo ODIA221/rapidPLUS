@@ -19,6 +19,7 @@ body {
 h1 {
     color: #D4A24C;
     margin-bottom: 20px;
+    font-size: 28px; 
 }
 
 .contact-info {
@@ -32,6 +33,7 @@ h1 {
 .contact-info a {
     color: #D4A24C;
     text-decoration: none;
+    font-weight: bold; 
 }
 
 .social-icons {
@@ -51,6 +53,11 @@ h1 {
     line-height: 40px;
     text-align: center;
     font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #b57b29;
 }
 
 form {
@@ -62,15 +69,22 @@ form label {
     display: block;
     margin: 10px 0 5px;
     font-weight: bold;
+    font-size: 16px; 
 }
 
 form input, form textarea, form button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    transition: border-color 0.3s ease; 
+}
+
+form input:focus, form textarea:focus {
+    border-color: #D4A24C; 
+    outline: none; 
 }
 
 form button {
@@ -78,8 +92,14 @@ form button {
     color: #fff;
     border: none;
     cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
 }
 
 form button:hover {
-    background-color: #D4A24C;
+    background-color: #b57b29; 
+}
+
+form button:active {
+    background-color: #8e5f1d; 
 }
