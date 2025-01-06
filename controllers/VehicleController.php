@@ -4,35 +4,27 @@ require_once __DIR__ . '/../models/Vehicle.php';
 class VehicleController {
 
     // Méthode pour gérer la soumission du formulaire
-    public function handleSubmit() {
-        $result = '';
+    public function handleSubmit($licensePlate, $driverName, $driverPhone, $isAvailable, $contactInfo) {
+        try {
+            // Insérer les données dans la base de données
+            $db = Database::getConnection();
+            $query = "INSERT INTO vehicles (license_plate, driver_name, driver_phone, is_available, contact_info) 
+                      VALUES (:licensePlate, :driverName, :driverPhone, :isAvailable, :contactInfo)";
+            $stmt = $db->prepare($query);
+            $stmt->bindParam(':licensePlate', $licensePlate);
+            $stmt->bindParam(':driverName', $driverName);
+            $stmt->bindParam(':driverPhone', $driverPhone);
+            $stmt->bindParam(':isAvailable', $isAvailable);
+            $stmt->bindParam(':contactInfo', $contactInfo);
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Récupération et protection des données utilisateur
-            $licensePlate = htmlspecialchars($_POST['licensePlate'] ?? '', ENT_QUOTES, 'UTF-8');
-            $driverName = htmlspecialchars($_POST['driverName'] ?? '', ENT_QUOTES, 'UTF-8');
-            $driverPhone = htmlspecialchars($_POST['driverPhone'] ?? '', ENT_QUOTES, 'UTF-8');
-            $isAvailable = $_POST['isAvailable'] ?? 1; 
-            $contactInfo = htmlspecialchars($_POST['contactInfo'] ?? '', ENT_QUOTES, 'UTF-8');
-
-            // Validation des données
-            if ($this->validateForm($licensePlate, $driverName, $driverPhone, $isAvailable, $contactInfo)) {
-                // Appel de la méthode create pour ajouter le véhicule
-                try {
-                    if (Vehicle::create($licensePlate, $driverName, $driverPhone, $isAvailable, $contactInfo)) {
-                        $result = "<p class='success'>Véhicule ajouté avec succès !</p>";
-                    } else {
-                        $result = "<p class='error'>Erreur lors de l'ajout du véhicule. Veuillez réessayer.</p>";
-                    }
-                } catch (Exception $e) {
-                    $result = "<p class='error'>Erreur interne : " . htmlspecialchars($e->getMessage(), ENT_QUOTES, 'UTF-8') . "</p>";
-                }
+            if ($stmt->execute()) {
+                return ['status' => 'success', 'message' => 'Véhicule ajouté avec succès !'];
             } else {
-                $result = "<p class='error'>Veuillez remplir correctement tous les champs.</p>";
+                return ['status' => 'error', 'message' => 'Erreur lors de l\'ajout du véhicule.'];
             }
+        } catch (PDOException $e) {
+            return ['status' => 'error', 'message' => 'Erreur: ' . $e->getMessage()];
         }
-
-        return $result;
     }
 
     // Validation du formulaire

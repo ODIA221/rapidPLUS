@@ -44,8 +44,8 @@ $result = $controller->handleSubmit();
         <?php endif; ?>
 
         <div class="contact-info">
-            <p>Email : <a href="mailto:support@votresite.com">support@votresite.com</a></p>
-            <p>Téléphone : <a href="tel:+33123456789">+33 1 23 45 67 89</a></p>
+            <p>Email : <a href="mailto:rapid_plus@transport.com">support@votresite.com</a></p>
+            <p>Téléphone : <a href="tel:+33123456789">33 823 67 89</a></p>
             <div class="social-icons">
                 <a href="#" title="Facebook">F</a>
                 <a href="#" title="Twitter">T</a>

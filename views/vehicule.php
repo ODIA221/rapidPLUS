@@ -5,7 +5,20 @@ $baseURL = "http://" . $_SERVER['HTTP_HOST'] . "/www/app_transport";
 
 // Créez une instance du contrôleur
 $vehicleController = new VehicleController();
-$result = $vehicleController->handleSubmit();
+$result = [];
+
+// Vérification de la soumission du formulaire
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Récupération des données du formulaire
+    $licensePlate = $_POST['licensePlate'];
+    $driverName = $_POST['driverName'];
+    $driverPhone = $_POST['driverPhone'];
+    $isAvailable = $_POST['isAvailable'];
+    $contactInfo = $_POST['contactInfo'];
+
+    // Appeler la méthode pour ajouter le véhicule et récupérer le résultat
+    $result = $vehicleController->handleSubmit($licensePlate, $driverName, $driverPhone, $isAvailable, $contactInfo);
+}
 ?>
 
 <!DOCTYPE html>
@@ -45,8 +58,8 @@ $result = $vehicleController->handleSubmit();
                 <option value="0">Non</option>
             </select>
 
-            <label for="contactInfo">Informations de contact :</label>
-            <textarea id="contactInfo" name="contactInfo" rows="4" placeholder="Ex: Email ou autres informations" required></textarea>
+            <label for="contactInfo">Localisation  :</label>
+            <textarea id="contactInfo" name="contactInfo" rows="4" placeholder="Ex: garage fréquénté quotidiennement " required></textarea>
 
             <button type="submit">Ajouter Véhicule</button>
         </form>

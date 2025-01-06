@@ -37,7 +37,7 @@ try {
                             <?= $vehicle['isAvailable'] ? 'Disponible' : 'Non disponible' ?>
                         </span>
                     </p>
-                    <p><strong>Contact :</strong> <?= htmlspecialchars($vehicle['contactInfo'] ?? 'Non fourni') ?></p>
+                    <p><strong>Localisation :</strong> <?= htmlspecialchars($vehicle['contactInfo'] ?? 'Non fourni') ?></p>
                     
                     <!-- Bouton de réservation qui envoie l'ID du véhicule -->
                     <form action="reservation.php" method="GET">

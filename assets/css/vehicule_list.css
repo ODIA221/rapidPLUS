@@ -31,6 +31,7 @@ main {
     height: 250px;
     text-align: center;
     transition: transform 0.2s;
+    border: #D4A24C;
 }
 
 .vehicle-card:hover {
@@ -88,4 +89,10 @@ main {
 }
 .unavailable {
     color: red;
+}
+
+form button{
+    background-color: #D4A24C;
+    color: #fff;
+    font-weight: 20px;
 }
