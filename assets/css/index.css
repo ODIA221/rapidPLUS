@@ -12,24 +12,24 @@ body {
 main {
     flex: 1;
     display: flex;
-    flex-direction: column; /* Garantit que les sections s'empilent verticalement */
-    gap: 20px; /* Espacement entre les sections */
+    flex-direction: column; 
+    gap: 20px; 
     padding: 20px;
 }
 
 /* Banner */
 .banner {
-    width: 100%; /* Prend toute la largeur disponible */
-    max-height: 300px; /* Ajuste la hauteur maximale */
-    overflow: hidden; /* Empêche les débordements si l'image est trop grande */
+    width: 100%; 
+    max-height: 300px; 
+    overflow: hidden; 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .banner img {
-    width: 100%; /* L'image s'étire sur toute la largeur */
-    height: auto; /* Préserve le ratio de l'image */
+    width: 100%; 
+    height: auto;
     display: block;
 }
 
@@ -46,19 +46,19 @@ main {
 .content h2 {
     margin-bottom: 20px;
     font-size: 2rem;
-    color: #D4A24C; /* Correspondance avec le header */
+    color: #D4A24C;
 }
 
 .content .transport-images {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Permet aux images de passer à la ligne si nécessaire */
+    flex-wrap: wrap; 
     gap: 20px;
 }
 
 .content img {
     width: 150px;
-    height: auto; /* Préserve le ratio d'image */
+    height: auto; 
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -69,6 +69,6 @@ main {
     padding: 10px;
     background-color: #333;
     color: #ccc;
-    width: 100%; /* S'assure que le footer prend toute la largeur */
+    width: 100%; 
     position: relative;
 }

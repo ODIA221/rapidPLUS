@@ -113,13 +113,13 @@ form button:active {
     margin-bottom: 20px;
     text-align: center;
     font-size: 1.2rem;
-    color: #28a745; /* Vert pour succès */
+    color: #28a745; 
 }
 
 .error-message {
     margin-bottom: 20px;
     text-align: center;
     font-size: 1.2rem;
-    color: #dc3545; /* Rouge pour erreur */
+    color: #dc3545;
 }
 

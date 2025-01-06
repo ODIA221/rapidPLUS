@@ -18,6 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Appeler la méthode pour ajouter le véhicule et récupérer le résultat
     $result = $vehicleController->handleSubmit($licensePlate, $driverName, $driverPhone, $isAvailable, $contactInfo);
+
+    // Redirection après 3 secondes si l'ajout est un succès
+    if ($result['status'] === 'success') {
+        echo "<script>setTimeout(function() { window.location.href = '$baseURL'; }, 3000);</script>";
+    }
 }
 ?>
 

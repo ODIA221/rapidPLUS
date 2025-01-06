@@ -28,8 +28,8 @@ try {
         <?php else: ?>
             <?php foreach ($vehicles as $vehicle): ?>
                 <div class="vehicle-card">
-                    <h2>Véhicule ID: <?= htmlspecialchars($vehicle['id']) ?></h2>
-                    <p><strong>Plaque d'immatriculation :</strong> <?= htmlspecialchars($vehicle['licensePlate']) ?></p>
+                    <h2>Véhicule : <?= htmlspecialchars($vehicle['licensePlate']) ?></h2>
+                    <!-- <p><strong>Plaque d'immatriculation :</strong> <?= htmlspecialchars($vehicle['licensePlate']) ?></p> -->
                     <p><strong>Nom du conducteur :</strong> <?= htmlspecialchars($vehicle['driverName']) ?></p>
                     <p><strong>Téléphone du conducteur :</strong> <?= htmlspecialchars($vehicle['driverPhone']) ?></p>
                     <p><strong>Disponibilité :</strong> 
