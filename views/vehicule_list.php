@@ -18,7 +18,9 @@ try {
     <title>Liste des Véhicules</title>
 </head>
 <body>
-    <div class="vehicle-container">
+    <!-- Inclusion du Header -->
+    <?php require_once __DIR__ . '/header.php'; ?>
+    <main class="container">
         <?php if (empty($vehicles)): ?>
             <div class="no-vehicles">
                 Aucun véhicule disponible pour le moment.
@@ -45,6 +47,8 @@ try {
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>
-    </div>
+    </main>
+    <!-- Inclusion du Footer -->
+    <?php require_once __DIR__ . '/footer.php'; ?>
 </body>
 </html>

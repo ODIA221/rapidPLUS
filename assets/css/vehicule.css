@@ -1,23 +1,25 @@
-/* Reset des marges et des bordures par défaut */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Corps du site */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1; 
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Conteneur principal du formulaire */
 .container {
     width: 100%;
     max-width: 600px;
-    margin: 0 auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -32,19 +34,25 @@ h1 {
     text-align: center;
 }
 
-/* Messages de succès/erreur */
+/* Messages de résultat */
 .result-message {
     text-align: center;
     font-weight: bold;
     margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 4px;
 }
 
-.success {
+.result-message.success {
     color: #4CAF50;
+    background-color: #E6F4EA;
+    border: 2px solid #4CAF50;
 }
 
-.error {
+.result-message.error {
     color: #ee2c66;
+    background-color: #FDE9EC;
+    border: 2px solid #ee2c66;
 }
 
 /* Style des champs de formulaire */
@@ -63,15 +71,10 @@ input, select, textarea {
     border-radius: 4px;
     font-size: 14px;
     color: #333;
-}
-
-input[type="tel"], input[type="text"], select {
-    font-size: 14px;
+    box-sizing: border-box;
 }
 
 textarea {
-    font-family: Arial, sans-serif;
-    font-size: 14px;
     resize: vertical;
 }
 
@@ -92,22 +95,12 @@ button:hover {
     background-color: #eb9a0f;
 }
 
-/* Champ de sélection (pour 'Disponible') */
-select {
-    appearance: none;
-    background-color: #fff;
-    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"%3E%3Cpath fill="none" stroke="%23333" stroke-width="1.5" d="M1 1l4 4 4-4"%3E%3C/path%3E%3C/svg%3E');
-    background-position: right 10px center;
-    background-repeat: no-repeat;
-    padding-right: 30px;
-}
-
 /* Champs obligatoires */
 input:required, select:required, textarea:required {
     border-color: #D4A24C;
 }
 
-/* Ajouter un espace entre les éléments du formulaire */
+/* Ajout d'espacement entre les éléments */
 form {
     margin-top: 20px;
 }

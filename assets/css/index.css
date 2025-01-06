@@ -1,59 +1,66 @@
-/* Global styles */
+/* Général pour le layout */
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* Header */
-header {
-    background-color: #D4A24C;
-    padding: 10px 20px;
+main {
+    flex: 1;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-header img {
-    width: 80px;
-}
-header nav a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    margin: 0 15px;
-}
-header nav a:hover {
-    text-decoration: underline;
+    flex-direction: column; /* Garantit que les sections s'empilent verticalement */
+    gap: 20px; /* Espacement entre les sections */
+    padding: 20px;
 }
 
 /* Banner */
 .banner {
-    height: 300px;
+    width: 100%; /* Prend toute la largeur disponible */
+    max-height: 300px; /* Ajuste la hauteur maximale */
+    overflow: hidden; /* Empêche les débordements si l'image est trop grande */
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
-.banner h1 {
-    color: white;
-    font-size: 3rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+
+.banner img {
+    width: 100%; /* L'image s'étire sur toute la largeur */
+    height: auto; /* Préserve le ratio de l'image */
+    display: block;
 }
 
 /* Content */
 .content {
     text-align: center;
     padding: 20px;
-    background-color: #c2b5b5;
+    background-color: #0f0f0f;
     color: white;
-    flex: 1;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.content h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #D4A24C; /* Correspondance avec le header */
+}
+
+.content .transport-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permet aux images de passer à la ligne si nécessaire */
+    gap: 20px;
+}
+
 .content img {
     width: 150px;
-    height: auto;
+    height: auto; /* Préserve le ratio d'image */
     border-radius: 10px;
-    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer */
@@ -62,5 +69,6 @@ header nav a:hover {
     padding: 10px;
     background-color: #333;
     color: #ccc;
+    width: 100%; /* S'assure que le footer prend toute la largeur */
     position: relative;
 }

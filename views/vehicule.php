@@ -17,12 +17,16 @@ $result = $vehicleController->handleSubmit();
     <title>Ajouter un Véhicule</title>
 </head>
 <body>
-    <div class="container">
+    <!-- Inclusion du Header -->
+    <?php require_once __DIR__ . '/header.php'; ?>
+    <main class="container">
         <h1>Ajouter un Véhicule</h1>
 
         <!-- Affichez le message de résultat s'il y en a un -->
         <?php if (!empty($result)): ?>
-            <div class="result-message"><?php echo $result; ?></div>
+            <div class="result-message <?php echo $result['status'] === 'success' ? 'success' : 'error'; ?>">
+                <?php echo htmlspecialchars($result['message'], ENT_QUOTES, 'UTF-8'); ?>
+            </div>
         <?php endif; ?>
 
         <form action="" method="POST">
@@ -46,6 +50,8 @@ $result = $vehicleController->handleSubmit();
 
             <button type="submit">Ajouter Véhicule</button>
         </form>
-    </div>
+    </main>
+    <!-- Inclusion du Footer -->
+    <?php require_once __DIR__ . '/footer.php'; ?>
 </body>
 </html>

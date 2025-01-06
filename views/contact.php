@@ -22,12 +22,14 @@ $result = $controller->handleSubmit();
         function redirectToIndex() {
             setTimeout(function() {
                 window.location.href = '/www/app_transport/index.php';
-            }, 3000); // Attendre 3 secondes
+            }, 3000);
         }
     </script>
 </head>
 <body>
-    <div class="container">
+    <!-- Inclusion du Header -->
+    <?php require_once __DIR__ . '/header.php'; ?>
+    <main class="container">
         <h1>Contactez le Service Client</h1>
 
         <!-- Affichez le message de résultat s'il y en a un -->
@@ -63,6 +65,9 @@ $result = $controller->handleSubmit();
 
             <button type="submit">Envoyer</button>
         </form>
-    </div>
+    </main>
+
+    <!-- Inclusion du Footer -->
+    <?php require_once __DIR__ . '/footer.php'; ?>
 </body>
 </html>

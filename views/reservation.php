@@ -50,8 +50,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../assets/css/reservation.css">
     <title>Réserver un véhicule</title>
 </head>
+
 <body>
-    <div class="container">
+    <!-- Inclusion du Header -->
+    <?php require_once __DIR__ . '/header.php'; ?>
+    <main class="container">
         <h1>Réserver un véhicule</h1>
         <?php if (isset($message)) echo $message; ?>
         <form method="POST">
@@ -73,16 +76,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="tel" id="phone" name="phone" required>
 
             <button type="submit">Réserver</button>
-        </form>
-    </div>
 
-    <?php if (isset($redirectDelay)): ?>
+            <?php if (isset($redirectDelay)): ?>
         <script type="text/javascript">
             setTimeout(function() {
                 window.location.href = '/www/app_transport/index.php';
-            }, <?php echo $redirectDelay * 1000; ?>); // Redirection après 3 secondes
+            }, <?php echo $redirectDelay * 1000; ?>);
         </script>
     <?php endif; ?>
+        </form>
+    </main>
 
+<!-- Inclusion du Footer -->
+<?php require_once __DIR__ . '/footer.php'; ?>
 </body>
+
 </html>

@@ -1,3 +1,7 @@
 <footer class="footer">
-    <p>&copy; 2024 Rapide Plus. Tous droits réservés.</p>
+    <div>
+        <link rel="stylesheet" href="<?php echo $baseURL; ?>/assets/css/footer.css">
+    </div>
+
+    <p>&copy; 2025, Rapide Plus. Tous droits réservés.</p>
 </footer>
